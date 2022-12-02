@@ -91,7 +91,7 @@ class WitmotionServo():
         if value < 1 or value > 20:
             raise ValueError("Value out of range: (1, 20)")
 
-        self.device.write([1, 0x05, 0x03, 0xff, 0x01, channel, value, 0x00] + [0]*57)
+        self.device.write([0x05, 0x03, 0xff, 0x01, channel, value, 0x00] + [0]*58)
 
     def execute_action_group(self, action_group: int) -> None:
         """ Executes an action group
